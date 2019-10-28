@@ -13,7 +13,7 @@ final class ZenMWSTests: XCTestCase {
         userAgent: "Webretail/1.0 (Language=Swift/4.1)"
     )
     
-    let mws = mwsService(config: config, notify: printLog)
+    let mws = ZenMWS(config: config, notify: printLog)
     
     func getProductFeed() -> ProductFeed {
         let messages = [
@@ -395,9 +395,9 @@ final class ZenMWSTests: XCTestCase {
         mws.start(requests: requests)
         
         sleep(20)
-        mws.stop()
+        //mws.stop()
         
-        XCTAssertTrue(mwsWebretailTests.requestCount > 0)
+        XCTAssertTrue(requests.count > 0)
     }
     
     static var allTests = [

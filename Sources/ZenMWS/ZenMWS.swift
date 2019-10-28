@@ -7,6 +7,7 @@
 
 import Foundation
 #if os(Linux)
+import FoundationXML
 import FoundationNetworking
 #endif
 import CryptoSwift
